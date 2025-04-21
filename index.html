@@ -1,1 +1,30 @@
+{% extends 'base.html' %} {% block title %}Home{% endblock %} {% block content
+%}
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xl-6 col-lg-6 col-md-6">
+      <h1>Welcome.</h1>
+      <br />
+      <p class="lead">
+        <b>MedMagic</b> is a simple application that allows users to search for
+        any clinical drug through the National Library of Medicine's RxNorm API.
+      </p>
+      <p class="lead">
+        To start, simply navigate to the search page by either clicking the
+        medication bottle image or using the navigation bar. Be sure to also
+        check out the help and about pages for more information.
+      </p>
+    </div>
+    <div class="col-xl-6 col-lg-6 col-md-6">
+      <a href="/search"
+        ><img
+          src="../static/images/bottle.png"
+          alt="medication bottle"
+          height="70%"
+      /></a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
