@@ -1,7 +1,9 @@
-from flask import Flask, redirect, render_template, url_for, request, flash, Markup
+from flask import Flask, redirect, render_template, url_for, request, flash
+from markupsafe import Markup
 from datetime import datetime
 from flask import current_app as app
 from .api import *
+
 
 
 @app.route('/', methods=['GET'])

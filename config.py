@@ -1,26 +1,24 @@
 from os import environ, path
 from dotenv import load_dotenv
-import requests
+import uuid  # Use this instead of requests
 
 basedir = path.abspath(path.dirname(__file__))
 load_dotenv(path.join(basedir, '.env'))
 
 class Config:
-    """Set Flask configuaration from .env file"""
+    """Set Flask configuration from .env file"""
 
-    # general config
     try:
         FLASK_APP = environ.get('FLASK_APP')
         FLASK_ENV = environ.get('FLASK_ENV')    
     except:
         pass
 
-    # using microservice to set unique secret key
-    r = requests.get('https://uuid-genie.herokuapp.com/api/uuid')
-    uuid = r.json()
-    SECRET_KEY = uuid['uuid']
-    
-    # static Assets
+    # Generate a UUID locally instead of calling external service
+    SECRET_KEY = str(uuid.uuid4())
+
     STATIC_FOLDER = "static"
     TEMPLATES_FOLDER = "templates"
     COMPRESSOR_DEBUG = True
+
+    
