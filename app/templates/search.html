@@ -1,0 +1,58 @@
+{% extends 'base.html' %} {% block title %}Search{% endblock %} {% block content
+%}
+
+<!-- adding a flashed message to let user know they need to select a function -->
+{% with messages = get_flashed_messages() %} {% if messages %} {% for message in
+messages %}
+<div class="row p-5">
+  <div class="col p-5">
+    <div
+      class="alert alert-secondary"
+      role="alert"
+      style="background-color: #eeeeee"
+    >
+      {{ message }}
+    </div>
+  </div>
+</div>
+{% endfor %} {% endif %} {% endwith %}
+
+<div class="row p-5">
+  <div class="container">
+    <form class="d-flex" action="" method="POST">
+      <div class="col-auto p-2">
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          name="sel"
+        >
+          <option selected>Select Function</option>
+          <option value="getDrugs">Find All Drugs</option>
+          <option value="getApproximateMatch">Approximate Match</option>
+          <option value="image">Image</option>
+        </select>
+      </div>
+      <div class="col p-2">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Enter your search here..."
+          aria-label="Search"
+          name="search"
+          required
+        />
+      </div>
+      <div class="col-auto p-2">
+        <button
+          class="btn btn-outline-success text-white"
+          type="submit"
+          style="background-color: #7185ab"
+        >
+          Search
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
