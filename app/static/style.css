@@ -9,12 +9,15 @@
 }
 .score-high {
     color: green;
+    font-weight: bold;
 }
 
 .score-mid {
     color: orange;
+    font-weight: bold;
 }
 
 .score-low {
     color: red;
+    font-weight: bold;
 }

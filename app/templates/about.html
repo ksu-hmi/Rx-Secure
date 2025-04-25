@@ -1,83 +1,134 @@
-{% extends 'base.html' %} {% block title %}About{% endblock %} {% block content
-%}
+{% block title %}About{% endblock %}
+{% block content %}
 
-<div class="row p-3">
-  <h3>What is RxNorm?</h3>
-  <p class="lead">
-    RxNorm is two things: a normalized naming system for generic and branded
-    drugs; and a tool for supporting semantic interoperation between drug
-    terminologies and pharmacy knowledge base systems. The National Library of
-    Medicine (NLM) produces RxNorm.
-  </p>
-</div>
-<div class="row p-3">
-  <h3>Purpose of RxNorm</h3>
-  <p class="lead">
-    Hospitals, pharmacies, and other organizations use computer systems to
-    record and process drug information. Because these systems use many
-    different sets of drug names, it can be difficult for one system to
-    communicate with another. To address this challenge, RxNorm provides
-    normalized names and unique identifiers for medicines and drugs. The goal of
-    RxNorm is to allow computer systems to communicate drug-related information
-    efficiently and unambiguously.
-  </p>
-</div>
-<div class="row p-3">
-  <h4>Links</h4>
-  <div class="col">
-    <li>
-      <a
-        href="https://lhncbc.nlm.nih.gov/RxNav/APIs/RxNormAPIs.html"
-        class="link-secondary"
-        target="_blank"
-        >RxNorm API Documentation</a
-      >
-    </li>
-    <li>
-      <a
-        href="https://www.nlm.nih.gov/databases/umls.html"
-        class="link-secondary"
-        target="_blank"
-        >Unified Medical Language System License</a
-      >
-    </li>
-    <li>
-      <a href="https://www.nlm.nih.gov/" class="link-secondary" target="_blank"
-        >National Library of Medicine</a
-      >
-    </li>
-  </div>
-  <div class="col">
-    <li>
-      <a
-        href="https://github.com/chrismannina/med-magic"
-        class="link-secondary"
-        target="_blank"
-        >GitHub</a
-      >
-    </li>
-    <li>
-      <a
-        href="https://flask.palletsprojects.com/en/2.1.x/"
-        class="link-secondary"
-        target="_blank"
-        >Flask Documentation</a
-      >
-    </li>
-    <li>
-      <a href="https://getbootstrap.com/" class="link-secondary" target="_blank"
-        >Bootstrap</a
-      >
-    </li>
+<!-- Added Hero Banner (Mevin) -->
+<div class="bg-light p-5 mb-4 rounded-3 shadow-sm">
+  <div class="container-fluid py-3">
+    <h1 class="display-5 fw-bold">About RxNorm</h1>
+    <p class="fs-5">Understand the purpose and data behind this drug terminology system.</p>
   </div>
 </div>
-<div class="row p-3">
-  <h5>Disclaimer</h5>
-  <p class="small">
-    This product uses publicly available data from the U.S. National Library of
-    Medicine (NLM), National Institutes of Health, Department of Health and
-    Human Services; NLM is not responsible for the product and does not endorse
-    or recommend this or any other product.
+
+<!-- What is RxNorm(changed the content by Mevin ) -->
+<div class="card mb-4 shadow-sm p-4">
+  <h3 class="text-primary">
+    <i class="bi bi-capsule-pill me-2"></i> What is RxNorm?
+  </h3>
+  <p class="fs-5 text-muted">
+    RxNorm has two main functions: it provides a unified system for naming both generic and branded drugs, and it acts as a facilitator for interoperability between different drug terminologies and pharmacy information systems. Created by the National Library of Medicine (NLM), RxNorm helps ensure clarity and consistency in drug-related data.
   </p>
 </div>
+
+<!-- Purpose (changed the content by Mevin) -->
+<div class="card mb-4 shadow-sm p-4">
+  <h3 class="text-info">
+    <i class="bi bi-gear-fill me-2"></i> Purpose of RxNorm
+  </h3>
+  <p class="fs-5 text-muted">
+    Healthcare institutions such as hospitals and pharmacies rely on digital systems to manage drug data. These systems often use varying drug names, which can create barriers to effective communication between them. RxNorm addresses this issue by providing a standardized naming system and unique identifiers for medications. Its primary goal is to facilitate clear and efficient exchange of drug information between different systems.
+  </p>
+</div>
+
+<!-- Resource Links Mevin -->
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  <div class="col">
+    <div class="card h-100 p-3 shadow-sm">
+      <h4 class="text-success"><i class="bi bi-link-45deg me-2"></i>Resources</h4>
+      <ul class="list-unstyled">
+        <li>
+          <a
+            href="https://lhncbc.nlm.nih.gov/RxNav/APIs/RxNormAPIs.html"
+            class="link-secondary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            RxNorm API Documentation
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.nlm.nih.gov/databases/umls.html"
+            class="link-secondary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Unified Medical Language System License
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.nlm.nih.gov/"
+            class="link-secondary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            National Library of Medicine
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card h-100 p-3 shadow-sm">
+      <h4 class="text-success"><i class="bi bi-code-slash me-2"></i>Developer Links</h4>
+      <ul class="list-unstyled">
+        <li>
+          <a
+            href="https://github.com/ksu-hmi/Rx-Secure"
+            class="link-secondary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://flask.palletsprojects.com/en/2.1.x/"
+            class="link-secondary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Flask Documentation
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://getbootstrap.com/"
+            class="link-secondary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Bootstrap
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Disclaimer changed the content by Mevin -->
+<div class="card border-warning mt-5 shadow-sm">
+  <div class="card-body">
+    <h5 class="card-title text-warning"><i class="bi bi-exclamation-triangle-fill me-2"></i>Disclaimer</h5>
+    <p class="card-text small text-muted">
+      This product uses publicly available data from the U.S. National Library of
+      Medicine (NLM), National Institutes of Health, Department of Health and
+      Human Services; NLM is not responsible for the product and does not endorse
+      or recommend this or any other product.
+    </p>
+  </div>
+</div>
+<!-- Back to Home Button (Mevin) -->
+<div class="text-center mt-5">
+  <a href="/" class="btn btn-lg btn-primary px-4">
+    <i class="bi bi-house-fill me-2"></i> Back to Home
+  </a>
+</div>
+
 {% endblock %}
+
+
+
+
