@@ -7,3 +7,14 @@
 .navbar-dark .navbar-nav .nav-item .nav-link {
     color: #EEEEEE;
 }
+.score-high {
+    color: green;
+}
+
+.score-mid {
+    color: orange;
+}
+
+.score-low {
+    color: red;
+}
