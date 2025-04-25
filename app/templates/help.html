@@ -1,14 +1,35 @@
-{% extends 'base.html' %} {% block title %}Help{% endblock %} {% block content
-%}
+{% extends 'base.html' %}
+{% block title %}Help{% endblock %}
+{% block content %}
+
+<!-- Section for Help Topics -->
 <div class="row p-3">
   <h2>Need help?</h2>
 </div>
 <div class="row p-3">
-  <h5>Click on a search function to get more information...</h5>
+  <h5>Click on a function to get more information...</h5>
 </div>
+
+<!-- Search Bar for Help Topics added mevin -->
+<div class="row p-3">
+  <div class="col-12">
+    <div class="input-group">
+      <input type="text" class="form-control" id="searchHelp" placeholder="Search help topics...">
+      <button class="btn btn-primary" type="button" id="searchButton">Search</button>
+    </div>
+  </div>
+</div>
+
+<!-- Error Message -->
+<div id="error-message" class="alert alert-danger d-none" role="alert">
+  No results found for your search. Please try again.
+</div>
+
+<!-- Accordion (Search Functions) -->
 <div class="row p-3">
   <div class="accordion" id="accordion1">
-    <div class="accordion-item">
+    <!-- Find All Drugs Accordion Item -->
+    <div class="accordion-item shadow-sm mb-3">
       <h2 class="accordion-header" id="heading1">
         <button
           class="accordion-button collapsed"
@@ -17,8 +38,11 @@
           data-bs-target="#collapse1"
           aria-expanded="false"
           aria-controls="collapse1"
+          title="Click to learn more about finding all drugs"
+          data-bs-toggle="tooltip"
+          title="Click to learn more about finding all drugs"
         >
-          Find All Drugs
+          <i class="bi bi-search me-2"></i> Find All Drugs
         </button>
       </h2>
       <div
@@ -29,28 +53,26 @@
       >
         <div class="accordion-body">
           <p>
-            Get a list of all drug products with the specified name. The name
-            can be a drug ingredient, brand name, clinical dose form, branded
-            dose form, clinical drug component, or branded drug component.
+            Get a list of all drug products with the specified name. The name can be a drug ingredient, brand name, clinical dose form, branded dose form, clinical drug component, or branded drug component.
           </p>
           <p>
-            <em
-              >For example, try one of these names: azithromycin, Lipitor,
-              azithromycin 250 mg, morphine sulfate</em
-            >.
+            <em>For example, try one of these names: azithromycin, Lipitor, azithromycin 250 mg, morphine sulfate</em>.
           </p>
           <a
             href="https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getDrugs.html"
-            class="btn btn-primary"
+            class="btn btn-primary btn-doc-link"
             target="_blank"
-            style="background-color: #334257"
-            >API Documentation</a
+            data-bs-toggle="tooltip"
+            title="External documentation link"
           >
+            API Documentation
+          </a>
         </div>
       </div>
     </div>
 
-    <div class="accordion-item">
+    <!-- Approximate Match Accordion Item -->
+    <div class="accordion-item shadow-sm mb-3">
       <h2 class="accordion-header" id="heading2">
         <button
           class="accordion-button collapsed"
@@ -59,8 +81,11 @@
           data-bs-target="#collapse2"
           aria-expanded="false"
           aria-controls="collapse2"
+          title="Click to learn more about approximate match search"
+          data-bs-toggle="tooltip"
+          title="Click to learn more about approximate match search"
         >
-          Approximate Match
+          <i class="bi bi-search me-2"></i> Approximate Match
         </button>
       </h2>
       <div
@@ -71,36 +96,29 @@
       >
         <div class="accordion-body">
           <p>
-            Looks for the drug name in the RxNorm data set that most closely
-            matches the search. This function will display the name of the
-            RxNorm drug, RxCUI, and score. If you are unsure the spelling of a
-            drug, this is the function to use.
+            Looks for the drug name in the RxNorm data set that most closely matches the search. This function will display the name of the RxNorm drug, RxCUI, and score. If you are unsure about the spelling of a drug, this is the function to use.
           </p>
           <p>
-            <em
-              >For example, ranitidine (Zantac) is the correct spelling. Instead
-              try: rantidine</em
-            >. You'll see even using incorrect spelling returns the proper drug
-            name and RxCUI.
+            <em>For example, ranitidine (Zantac) is the correct spelling. Instead, try: rantidine. You'll see even using incorrect spelling returns the proper drug name and RxCUI.</em>
           </p>
-          <p>
-            This function will return a <strong>Score</strong>, which indicates
-            the match score. Higher is better, amount a given set of results.
-          </p>
+          <p>This function will return a <strong>Score</strong>, which indicates the match score. Higher is better, among a given set of results.</p>
           <p>
             <a
               href="https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getApproximateMatch.html"
-              class="btn btn-primary"
+              class="btn btn-primary btn-doc-link"
               target="_blank"
-              style="background-color: #334257"
-              >API Documentation</a
+              data-bs-toggle="tooltip"
+              title="External documentation link"
             >
+              API Documentation
+            </a>
           </p>
         </div>
       </div>
     </div>
 
-    <div class="accordion-item">
+    <!-- Image Accordion Item -->
+    <div class="accordion-item shadow-sm mb-3">
       <h2 class="accordion-header" id="heading3">
         <button
           class="accordion-button collapsed"
@@ -109,8 +127,11 @@
           data-bs-target="#collapse3"
           aria-expanded="false"
           aria-controls="collapse3"
+          title="Click to learn more about the image function"
+          data-bs-toggle="tooltip"
+          title="Click to learn more about the image function"
         >
-          Image
+          <i class="bi bi-image me-2"></i> Image
         </button>
       </h2>
       <div
@@ -121,27 +142,13 @@
       >
         <div class="accordion-body">
           <p>
-            What do medications and images have in common? Well, nothing. This
-            is a fun addition to try out in between querying the NLM medication
-            database. Simply, select Image from the dropdown menu, then search
-            for the whatever you like! This function uses a the microservice
-            created by
-            <a
-              href="https://github.com/shenalexw/image-microservice"
-              class="link-secondary"
-              target="_blank"
-              >Alexander Shen</a
-            >. The image microservice utilizes the Unsplash Image API.
+            What do medications and images have in common? Well, nothing. This is a fun addition to try out in between querying the NLM medication database. Simply, select Image from the dropdown menu, then search for whatever you like! This function uses the microservice created by
+            <a href="https://github.com/shenalexw/image-microservice" class="link-secondary" target="_blank">Alexander Shen</a>. The image microservice utilizes the Unsplash Image API.
           </p>
-
           <p>
-            <a
-              href="https://unsplash.com/"
-              class="btn btn-primary"
-              target="_blank"
-              style="background-color: #334257"
-              >Unsplash Website</a
-            >
+            <a href="https://unsplash.com/" class="btn btn-primary btn-doc-link" target="_blank">
+              Unsplash Website
+            </a>
           </p>
         </div>
       </div>
@@ -149,13 +156,15 @@
   </div>
 </div>
 
+<!-- Explanation of Terms -->
 <div class="row p-3 mt-3">
   <h5>Okay, great... now what do some of these terms mean?</h5>
 </div>
 
 <div class="row p-3">
   <div class="accordion" id="accordion2">
-    <div class="accordion-item">
+    <!-- RxCUI Accordion Item -->
+    <div class="accordion-item shadow-sm mb-3">
       <h2 class="accordion-header" id="heading5">
         <button
           class="accordion-button collapsed"
@@ -164,6 +173,9 @@
           data-bs-target="#collapse5"
           aria-expanded="false"
           aria-controls="collapse5"
+          title="Click to learn more about RxCUI"
+          data-bs-toggle="tooltip"
+          title="Click to learn more about RxCUI"
         >
           RxCUI
         </button>
@@ -176,18 +188,14 @@
       >
         <div class="accordion-body">
           <p>
-            NLM describes it as
-            <em
-              >"Identifier that points to the common meaning shared by the
-              various source names grouped and assigned to a particular
-              concept"</em
-            >. In simpler terms, this is giving each medication an unique ID.
+            NLM describes it as <em>"Identifier that points to the common meaning shared by the various source names grouped and assigned to a particular concept."</em> In simpler terms, this is giving each medication a unique ID.
           </p>
         </div>
       </div>
     </div>
 
-    <div class="accordion-item">
+    <!-- RxAUI Accordion Item -->
+    <div class="accordion-item shadow-sm mb-3">
       <h2 class="accordion-header" id="heading6">
         <button
           class="accordion-button collapsed"
@@ -196,6 +204,9 @@
           data-bs-target="#collapse6"
           aria-expanded="false"
           aria-controls="collapse6"
+          title="Click to learn more about RxAUI"
+          data-bs-toggle="tooltip"
+          title="Click to learn more about RxAUI"
         >
           RxAUI
         </button>
@@ -208,14 +219,14 @@
       >
         <div class="accordion-body">
           <p>
-            RxNorm atom unique identifier. This is a string identifier for each
-            RxNorm concept.
+            RxNorm atom unique identifier. This is a string identifier for each RxNorm concept.
           </p>
         </div>
       </div>
     </div>
 
-    <div class="accordion-item">
+    <!-- NDC Accordion Item -->
+    <div class="accordion-item shadow-sm mb-3">
       <h2 class="accordion-header" id="heading7">
         <button
           class="accordion-button collapsed"
@@ -224,6 +235,9 @@
           data-bs-target="#collapse7"
           aria-expanded="false"
           aria-controls="collapse7"
+          title="Click to learn more about NDC"
+          data-bs-toggle="tooltip"
+          title="Click to learn more about NDC"
         >
           NDC
         </button>
@@ -235,17 +249,52 @@
         data-bs-parent="#accordion2"
       >
         <div class="accordion-body">
-          The national drug code (NDC) is a unique product identifier used in
-          the United States for drugs intended for human use. The Drug Listing
-          Act of 1972 requires registered drug establishments to provide the
-          Food and Drug Administration (FDA) with a current list of all drugs
-          manufactured, prepared, propagated, compounded, or processed by it for
-          commercial distribution. Drug products are identified and reported
-          using the NDC.
+          The national drug code (NDC) is a unique product identifier used in the United States for drugs intended for human use. The Drug Listing Act of 1972 requires registered drug establishments to provide the Food and Drug Administration (FDA) with a current list of all drugs manufactured, prepared, propagated, compounded, or processed by it for commercial distribution. Drug products are identified and reported using the NDC.
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<!-- Back to Top Button -->
+<button id="backToTop" class="btn btn-secondary" title="Back to Top" style="display:none;">
+  Back to Top
+</button>
+
+<script>
+  // Back to top functionality
+  document.getElementById("backToTop").addEventListener("click", function() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  // Search functionality added mevin
+  document.getElementById("searchButton").addEventListener("click", function() {
+    var searchTerm = document.getElementById("searchHelp").value.toLowerCase();
+    var errorMessage = document.getElementById("error-message");
+    var found = false;
+
+    document.querySelectorAll(".accordion-item").forEach(function(item) {
+      var title = item.querySelector(".accordion-button").textContent.toLowerCase();
+      if (title.includes(searchTerm)) {
+        item.style.display = "block";
+        found = true;
+      } else {
+        item.style.display = "none";
+      }
+    });
+
+    // Show error message if no matches added mevin
+    if (found) {
+      errorMessage.classList.add("d-none");
+    } else {
+      errorMessage.classList.remove("d-none");
+    }
+  });
+
+
+  // Initialize tooltips
+  var tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  var tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+</script>
 
 {% endblock %}
