@@ -1,11 +1,19 @@
-{% extends 'base.html' %} {% block title %}:({% endblock %} {% block content %}
+{% extends 'base.html' %}
+{% block title %}No Results Found{% endblock %}
+{% block content %}
 
-<h2>:(</h2>
-<br />
-<p class="lead">
-  Looks like we couldn't find your search. Please go back to the
-  <strong><a href="/search" class="link-secondary">search page</a></strong> and
-  try again.
-</p>
+<div class="text-center my-5">
+  <!-- Optional Icon or Illustration Mevin-->
+  <img src="{{ url_for('static', filename='images/no-results.svg') }}" 
+       alt="No results illustration" 
+       style="max-width: 200px; margin-bottom: 20px;" />
+   <!-- change the content Mevin -->
+  <h2 class="text-danger">No Results Found</h2>
+  <p class="lead">
+    We couldn’t find anything matching your search.  
+    Please try different keywords or return to the 
+    <strong><a href="/search" class="link-secondary">search page</a></strong>.
+  </p>
 
+ 
 {% endblock %}
