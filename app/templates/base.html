@@ -10,8 +10,7 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
-
+    <link rel="stylesheet" href="../static/style.css" />
     <title>{% block title %}{% endblock %}</title>
   </head>
   <body class="d-flex flex-column min-vh-100" style="background-color: #eeeeee">
@@ -20,9 +19,9 @@
         <a class="navbar-brand" href="/">
           <img
             class="img-responsive"
-            src="../static/images/medmagic.png"
+            src="../static/images/Rx-secure.png"  
             alt="cm"
-          />
+          /> <!-- change the code for image title in home page (Kruti)-->
         </a>
         <button
           class="navbar-toggler"
@@ -64,13 +63,13 @@
   <footer class="text-center text-lg-start text-white">
     <div
       class="text-center small justify-content-between p-4"
-      style="background-color: #485c5f"
-    >
+      style="background-color: #3d4d50" 
+      ><!-- change code for color (Kruti)-->
       <span class="col-sm-3"
         >Made with <em><3</em> by
         <a href="https://github.com/chrismannina/med-magic" target="_blank">
-          <img class="img-responsive" src="../static/images/cm.png" alt="cm" />
-        </a>
+          <img class="img-responsive" src="../static/images/Cm_responsive.png" alt="cm" />
+        </a><!-- change code for responsive image (Kruti)-->
       </span>
     </div>
   </footer>

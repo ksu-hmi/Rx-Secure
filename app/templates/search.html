@@ -19,7 +19,12 @@ messages %}
 
 <div class="row p-5">
   <div class="container">
-    <form class="d-flex" action="" method="POST">
+    <form id="searchForm" class="d-flex" action="" method="POST">
+      <div id="spinner" class="text-center" style="display: none;">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
       <div class="col-auto p-2">
         <select
           class="form-select"
@@ -54,5 +59,10 @@ messages %}
     </form>
   </div>
 </div>
+<script>
+  document.getElementById("searchForm").addEventListener("submit", function () {
+    document.getElementById("spinner").style.display = "block";
+  });
+</script> <!--Add loading spinner on form submission to improve user feedback(Kruti)-->
 
 {% endblock %}
