@@ -33,10 +33,11 @@
           <td>{{ med['RxNorm Name'] }}</td>
           <!-- Make RxCUI a clickable link to the RxNorm API viewer (pravinya) -->
           <td>
-            <a href="https://rxnav.nlm.nih.gov/REST/rxcui/{{ med['RxCUI'] }}.json" target="_blank">
+            <a href="https://rxnav.nlm.nih.gov/REST/rxcui/{{ med['RxCUI'] }}" target="_blank">
               {{ med['RxCUI'] }}
             </a>
           </td>
+          
           <td>{{ med['PRESCRIBABLE'] }}</td>
           <td>{{ med['Source'] }}</td>
           <!-- Color code the score (pravinya) -->
