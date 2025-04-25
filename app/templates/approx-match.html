@@ -30,16 +30,21 @@
       <tbody>
         {% for med in meds %}
         <tr>
-          <td scope="row">{{ meds[med]['RxNorm Name'] }}</td>
-          <td scope="row">{{ meds[med]['RxCUI'] }}</td>
-          <td scope="row">{{ meds[med]['PRESCRIBABLE'] }}</td>
-          <td scope="row">{{ meds[med]['Source'] }}</td>
+          <td>{{ med['RxNorm Name'] }}</td>
+          <!-- Make RxCUI a clickable link to the RxNorm API viewer (pravinya) -->
+          <td>
+            <a href="https://rxnav.nlm.nih.gov/REST/rxcui/{{ med['RxCUI'] }}.json" target="_blank">
+              {{ med['RxCUI'] }}
+            </a>
+          </td>
+          <td>{{ med['PRESCRIBABLE'] }}</td>
+          <td>{{ med['Source'] }}</td>
           <td scope="row">{{ meds[med]['score'] }}</td>
         </tr>
         {% endfor %}
       </tbody>
     </table>
-  
+    {% endif %}
 </div>
 
 <div class="text-center p-5">
