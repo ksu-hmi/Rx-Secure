@@ -10,6 +10,12 @@
  {% if not meds %}
  <p class="text-center mt-5">No results found. Try another search term.</p>
 {% else %}
+ <!-- CSV Download Button (pravinya) -->
+ <div class="text-end mb-3">
+  <a href="/download?term={{ search_term }}" class="btn btn-success">
+    Download CSV
+  </a>
+</div>
  
     <table class="table">
       <thead>
