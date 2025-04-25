@@ -290,6 +290,15 @@
       errorMessage.classList.remove("d-none");
     }
   });
+  // Show/hide the "Back to Top" button based on scroll position added Mevin
+  window.addEventListener("scroll", function() {
+    var backToTopBtn = document.getElementById("backToTop");
+    if (window.scrollY > 100) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  });
 
 
   // Initialize tooltips
