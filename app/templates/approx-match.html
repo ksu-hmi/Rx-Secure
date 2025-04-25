@@ -6,7 +6,10 @@
 <div class="container mt-4">
   <!-- Search term heading (pravinya) -->
   <h2 class="text-center mb-4">Results for: <em>{{ search_term }}</em></h2>
-
+ <!-- No results message (pravinya) -->
+ {% if not meds %}
+ <p class="text-center mt-5">No results found. Try another search term.</p>
+{% else %}
  
     <table class="table">
       <thead>
