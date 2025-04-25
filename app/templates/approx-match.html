@@ -39,7 +39,9 @@
           </td>
           <td>{{ med['PRESCRIBABLE'] }}</td>
           <td>{{ med['Source'] }}</td>
-          <td scope="row">{{ meds[med]['score'] }}</td>
+          <!-- Color code the score (pravinya) -->
+          {% set score_class = 'score-high' if med['score'] > 90 else 'score-mid' if med['score'] > 50 else 'score-low' %}
+          <td class="{{ score_class }}">{{ med['score'] }}</td>
         </tr>
         {% endfor %}
       </tbody>
