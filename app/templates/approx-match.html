@@ -1,30 +1,38 @@
-{% extends 'base.html' %} {% block title %}Search{% endblock %} {% block content
-%}
+{% extends 'base.html' %}
 
-<div class="container">
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">RxNorm Name</th>
-        <th scope="col">RxCUI</th>
-        <th scope="col">Prescribable</th>
-        <th scope="col">Source</th>
-        <th scope="col">Score</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for med in meds %}
-      <tr>
-        <td scope="row">{{ meds[med]['RxNorm Name'] }}</td>
-        <td scope="row">{{ meds[med]['RxCUI'] }}</td>
-        <td scope="row">{{ meds[med]['PRESCRIBABLE'] }}</td>
-        <td scope="row">{{ meds[med]['Source'] }}</td>
-        <td scope="row">{{ meds[med]['score'] }}</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+{% block title %}Search{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <!-- Search term heading (pravinya) -->
+  <h2 class="text-center mb-4">Results for: <em>{{ search_term }}</em></h2>
+
+ 
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">RxNorm Name</th>
+          <th scope="col">RxCUI</th>
+          <th scope="col">Prescribable</th>
+          <th scope="col">Source</th>
+          <th scope="col">Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for med in meds %}
+        <tr>
+          <td scope="row">{{ meds[med]['RxNorm Name'] }}</td>
+          <td scope="row">{{ meds[med]['RxCUI'] }}</td>
+          <td scope="row">{{ meds[med]['PRESCRIBABLE'] }}</td>
+          <td scope="row">{{ meds[med]['Source'] }}</td>
+          <td scope="row">{{ meds[med]['score'] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  
 </div>
+
 <div class="text-center p-5">
   <a
     class="btn btn-primary"
